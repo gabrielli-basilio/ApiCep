@@ -15,6 +15,9 @@ class CepController extends Controller
 
     public function consultar(Request $request)
     {
+        $request->merge([
+            'cep' => preg_replace('/\D/', '', (string) $request->input('cep')),
+        ]);
         
        // validação
         $validacao= $request
