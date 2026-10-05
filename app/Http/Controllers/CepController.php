@@ -17,9 +17,14 @@ class CepController extends Controller
     {
         
        // validação
-
+        $validacao= $request
+            ->validate(['cep' => 'required|digits:8']);
+        $cep = $validacao['cep'];
 
        // requisição
+       $resposta = Http::timeout(5)
+       -> withoutVerifying()
+       ->get("https://viacep.com.br/ws/{$cep}/json/");
 
         $dados = $resposta->json();
 

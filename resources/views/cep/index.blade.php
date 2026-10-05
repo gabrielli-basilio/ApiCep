@@ -17,7 +17,10 @@
     </form>
 
     <!-- Mostrar os dados, caso haja -->
-    
+
+    @isset($endereco)
+        <p>Cidade: {{$endereco['localidade']}}</p>
+    @endisset
 
 </body>
 </html>
