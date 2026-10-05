@@ -19,7 +19,12 @@
     <!-- Mostrar os dados, caso haja -->
 
     @isset($endereco)
-        <p>Cidade: {{$endereco['localidade']}}</p>
+        <p>Cidade: <b>{{$endereco['localidade']}}</b></p>
+        <p>Rua: <b>{{$endereco['logradouro']}}</b></p>
+        <p>Bairro: <b>{{$endereco['bairro']}}</b></p>
+        <p>Estado: <b>{{$endereco['estado']}} - {{$endereco['uf']}}</b></p>
+        <p>Região: <b>{{$endereco['regiao']}}</b></p>
+        
     @endisset
 
 </body>
